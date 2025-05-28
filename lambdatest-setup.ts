@@ -13,7 +13,7 @@ const capabilities = {
   browserVersion: "latest",
   "LT:Options": {
     platform: "Linux",
-    build: "Playwright on LambdaTest",
+    build: "Playwright on LambdaTest using GitHub Actions and HyperExecute",
     name: "Playwright Test",
     user: process.env.LT_USERNAME,
     accessKey: process.env.LT_ACCESS_KEY,
