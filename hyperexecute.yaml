@@ -1,0 +1,39 @@
+---
+version: 0.1
+globalTimeout: 90
+testSuiteTimeout: 90
+testSuiteStep: 90
+
+runson: ${matrix.os}
+parallelism: 3
+
+matrix:
+  os: ["linux"]
+  version: ["latest, dev"]
+  browser: ["chrome"]
+
+autosplit: true
+retryOnFailure: true
+maxRetries: 1
+concurrency: 4
+framework:
+  name: playwright
+runtime:                    
+  language: node
+  version: "18"        
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+pre:
+  # Linux steps
+  - node --version
+  - npm install
+
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: find tests/*.ts || true
+testRunnerCommand: npx playwright test $test
+jobLabel: [playwright, linux, autosplit] 
+
+report: true
