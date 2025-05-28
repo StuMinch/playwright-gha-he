@@ -1,0 +1,17 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# HyperExecute
+.hyperexecute
+.updatedhyperexecute.yaml
+hyperexecute
+hyperexecuteupdate
+hyperexecute-*
+
+# macOS
+.DS_Store
