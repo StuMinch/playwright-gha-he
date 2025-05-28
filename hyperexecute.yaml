@@ -8,7 +8,7 @@ runson: linux
 autosplit: true
 retryOnFailure: true
 maxRetries: 1
-concurrency: 4
+concurrency: 1
 framework:
   name: playwright
 runtime:                    
@@ -24,8 +24,6 @@ pre:
 
 testDiscovery:
   type: raw
-  mode: dynamic
-  command: find tests/*.ts || true
 testRunnerCommand: npx playwright test $test
 jobLabel: [playwright, linux, autosplit] 
 
