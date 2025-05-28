@@ -1,13 +1,9 @@
 name: HyperExecute
 on:
-  workflow_dispatch:
-    inputs:
-      username:
-        required: true
-        description: LT Username
-      accessKey:
-        description: LT Access Key
-        required: true
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
         
 jobs:
   HyperExecute:
