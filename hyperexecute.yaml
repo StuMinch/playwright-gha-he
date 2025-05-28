@@ -23,8 +23,9 @@ pre:
   - npm install
 
 testDiscovery:
-  type: automatic
+  type: raw
   mode: dynamic
+  command: find tests/*.ts || true
 testRunnerCommand: npx playwright test $test
 jobLabel: [playwright, linux, autosplit] 
 
